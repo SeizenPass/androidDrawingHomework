@@ -10,27 +10,27 @@
         android:id="@+id/ib_small_brush"
         android:contentDescription="image_small"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/ib_medium_brush"/>
+        app:layout_constraintBottom_toTopOf="@+id/ib_medium_brush"/>
     <ImageButton
         android:src="@drawable/medium"
         android:id="@+id/ib_medium_brush"
-        android:contentDescription="image_medium"
+        android:contentDescription="image_small"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/ib_large_brush"/>
+        app:layout_constraintBottom_toTopOf="@+id/ib_large_brush"/>
     <ImageButton
         android:src="@drawable/large"
         android:id="@+id/ib_large_brush"
         android:contentDescription="image_large"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_height="wrap_content" />
