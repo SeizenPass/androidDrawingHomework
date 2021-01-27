@@ -99,4 +99,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         resources.displayMetrics)
         mDrawPaint!!.strokeWidth = mBrushSize
     }
+
+    fun setColorForBrush(c: Int) {
+        color = c
+    }
 }
