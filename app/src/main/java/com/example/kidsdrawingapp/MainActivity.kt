@@ -6,6 +6,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ViewFlipper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,8 +24,37 @@ class MainActivity : AppCompatActivity() {
             showBrushSizeChooserDialog()
         }
 
-        ib_paint.setOnClickListener{
-            showBrushColorChooserDialog()
+        val bBlack = findViewById<ImageButton>(R.id.bBlack)
+        bBlack.setOnClickListener {
+            drawing_view.setColorForBrush(Color.BLACK)
+        }
+        val bGreen = findViewById<ImageButton>(R.id.bGreen)
+        bGreen.setOnClickListener {
+            setColorEvent( "#0FC559")
+        }
+        val bRed = findViewById<ImageButton>(R.id.bRed)
+        bRed.setOnClickListener{
+            setColorEvent("#C52A0F")
+        }
+        val bYellow = findViewById<ImageButton>(R.id.bYellow)
+        bYellow.setOnClickListener{
+            setColorEvent( "#F4D03F")
+        }
+        val bPurple = findViewById<ImageButton>(R.id.bPurple)
+        bPurple.setOnClickListener{
+            setColorEvent( "#8E44AD")
+        }
+        val bWhite = findViewById<ImageButton>(R.id.bWhite)
+        bWhite.setOnClickListener{
+            setColorEvent( "#F0F3F4")
+        }
+        val bBlue = findViewById<ImageButton>(R.id.bBlue)
+        bBlue.setOnClickListener{
+            setColorEvent( "#3498DB")
+        }
+        val bEraser = findViewById<ImageButton>(R.id.bEraser)
+        bEraser.setOnClickListener{
+            setColorEvent( "#FFFFFF")
         }
     }
 
@@ -48,48 +78,12 @@ class MainActivity : AppCompatActivity() {
             brushDialog.dismiss()
         }
         brushDialog.show()
+
+
     }
 
-    private fun showBrushColorChooserDialog() {
-        val brushDialog = Dialog(this)
 
-        brushDialog.setContentView(R.layout.dialog_brush_color)
-
-        brushDialog.setTitle("Brush color: ")
-        val bBlack = brushDialog.bBlack
-        bBlack.setOnClickListener {
-            drawing_view.setColorForBrush(Color.BLACK)
-            brushDialog.dismiss()
-        }
-        val bGreen = brushDialog.bGreen
-        bGreen.setOnClickListener {
-            setColorEvent(brushDialog, "#0FC559")
-        }
-        val bRed = brushDialog.bRed
-        bRed.setOnClickListener{
-            setColorEvent(brushDialog, "#C52A0F")
-        }
-        val bYellow = brushDialog.bYellow
-        bYellow.setOnClickListener{
-            setColorEvent(brushDialog, "#F4D03F")
-        }
-        val bPurple = brushDialog.bPurple
-        bPurple.setOnClickListener{
-            setColorEvent(brushDialog, "#8E44AD")
-        }
-        val bWhite = brushDialog.bWhite
-        bWhite.setOnClickListener{
-            setColorEvent(brushDialog, "#F0F3F4")
-        }
-        val bBlue = brushDialog.bBlue
-        bBlue.setOnClickListener{
-            setColorEvent(brushDialog, "#3498DB")
-        }
-        brushDialog.show()
-    }
-
-    private fun setColorEvent(dialog: Dialog,color: String) {
+    private fun setColorEvent(color: String) {
         drawing_view.setColorForBrush(Color.parseColor(color));
-        dialog.dismiss();
     }
 }
