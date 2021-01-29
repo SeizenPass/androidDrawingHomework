@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showBrushColorChooserDialog(){
+    private fun showBrushSizeChooserDialog(){
         val brushDialog = Dialog(this)
         brushDialog.setContentView(R.layout.dialog_brush_size)
         brushDialog.setTitle("Brush size: ")
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         brushDialog.show()
     }
 
-    private fun showBrushSizeChooserDialog() {
+    private fun showBrushColorChooserDialog() {
         val brushDialog = Dialog(this)
 
         brushDialog.setContentView(R.layout.dialog_brush_color)
@@ -63,9 +63,33 @@ class MainActivity : AppCompatActivity() {
         }
         val bGreen = brushDialog.bGreen
         bGreen.setOnClickListener {
-            drawing_view.setColorForBrush(Color.parseColor("#0FC559"))
-            brushDialog.dismiss()
+            setColorEvent(brushDialog, "#0FC559")
+        }
+        val bRed = brushDialog.bRed
+        bRed.setOnClickListener{
+            setColorEvent(brushDialog, "#C52A0F")
+        }
+        val bYellow = brushDialog.bYellow
+        bYellow.setOnClickListener{
+            setColorEvent(brushDialog, "#F4D03F")
+        }
+        val bPurple = brushDialog.bPurple
+        bPurple.setOnClickListener{
+            setColorEvent(brushDialog, "#8E44AD")
+        }
+        val bWhite = brushDialog.bWhite
+        bWhite.setOnClickListener{
+            setColorEvent(brushDialog, "#F0F3F4")
+        }
+        val bBlue = brushDialog.bBlue
+        bBlue.setOnClickListener{
+            setColorEvent(brushDialog, "#3498DB")
         }
         brushDialog.show()
+    }
+
+    private fun setColorEvent(dialog: Dialog,color: String) {
+        drawing_view.setColorForBrush(Color.parseColor(color));
+        dialog.dismiss();
     }
 }

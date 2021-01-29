@@ -14,4 +14,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bGreen"/>
+    <ImageButton
+        android:src="@drawable/red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bRed"/>
+    <ImageButton
+        android:src="@drawable/purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bPurple"/>
+    <ImageButton
+        android:src="@drawable/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bWhite"/>
+    <ImageButton
+        android:src="@drawable/yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bYellow"/>
+    <ImageButton
+        android:src="@drawable/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bBlue"/>
 </LinearLayout>
